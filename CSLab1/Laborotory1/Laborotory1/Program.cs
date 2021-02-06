@@ -16,8 +16,8 @@ namespace Laborotory1
                 Console.WriteLine($"{fileName} \n {TextAnalyzer.Analyze(textDirectory + fileName)} ");
             }
 
-            string testFilePath = textDirectory + "EncodingTest.txt";
-            string customEncodedPath = textDirectory + "CustomBase64.txt";
+            string testFilePath = textDirectory+"Example1.txt";
+            string customEncodedPath = textDirectory+"CustomBase64.txt";
             Base64Encoder.Encode(testFilePath, customEncodedPath);
 
             string customEncoding = File.ReadAllText(customEncodedPath);
@@ -25,6 +25,7 @@ namespace Laborotory1
             Console.WriteLine($"Custom base64: {customEncoding } \n\nConvert.Base64: {base64Encoding}\n");
             Console.WriteLine($"Base64 check: {base64Encoding.Equals(customEncoding)}");
 
+            Console.WriteLine($"CustomBase64.txt \n {TextAnalyzer.Analyze(customEncodedPath)} ");
             Console.ReadKey();
         }
     }

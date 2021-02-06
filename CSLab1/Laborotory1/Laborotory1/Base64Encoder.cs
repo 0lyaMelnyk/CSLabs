@@ -13,7 +13,8 @@ namespace Laborotory1
             int value = 0;
             using (BinaryReader binaryReader = new BinaryReader(File.Open(inputPath, FileMode.Open), Encoding.UTF8))
             {
-                using (StreamWriter streamWriter = new StreamWriter(File.OpenWrite(outputPath)))
+                if (!File.Exists(outputPath))
+                    using (StreamWriter streamWriter = new StreamWriter(File.OpenWrite(outputPath)))
                 {
                     int mod = (int)(binaryReader.BaseStream.Length % 3);
                     for (int i = 0; i < binaryReader.BaseStream.Length - mod; i += 3)
