@@ -1,4 +1,4 @@
-ASFLAGS=-O0 -s --64 --gdwarf-2
+ASFLAGS=--gdwarf-2 -s --64 
 LDFLAGS=-static
 
 .PHONY: all clean exec
